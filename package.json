@@ -1,0 +1,36 @@
+{
+  "name": "multiprodtool",
+  "version": "1.0.0",
+  "description": "Self-hosted productivity workspace for notes, tasks, habits and workouts.",
+  "author": "MultiProdTool",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "build:web": "vite build",
+    "serve:web": "node server/server.mjs",
+    "start": "node server/server.mjs",
+    "start:web": "npm run build:web && node server/server.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "check": "npm run typecheck && npm audit --audit-level=high"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "6.0.3",
+    "date-fns": "4.4.0",
+    "lucide-react": "1.21.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "typescript": "6.0.3",
+    "vite": "8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.0.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3"
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10.8.0"
+  }
+}

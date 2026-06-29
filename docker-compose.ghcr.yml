@@ -1,0 +1,24 @@
+services:
+  multiprodtool:
+    image: ghcr.io/YOUR_GITHUB_USERNAME/multiprodtool:latest
+    container_name: multiprodtool
+    restart: unless-stopped
+    labels:
+      - org.opencontainers.image.title=MultiProdTool
+      - org.opencontainers.image.description=Self-hosted personal operating system
+      - org.opencontainers.image.source=https://github.com/KarthikGopi1234/MultiProdTool
+    ports:
+      - "8787:8787"
+    volumes:
+      - multiprodtool-data:/data
+    environment:
+      - NODE_ENV=production
+      - PORT=8787
+      - MULTIPROD_DATA_DIR=/data
+      # Strongly recommended if accessible beyond your trusted home network.
+      # Change these values before deploying publicly.
+      # - MULTIPROD_AUTH_USERNAME=admin
+      # - MULTIPROD_AUTH_PASSWORD=change-this-password
+
+volumes:
+  multiprodtool-data:

@@ -1,0 +1,17 @@
+services:
+  multiprodtool:
+    build: .
+    container_name: multiprodtool
+    restart: unless-stopped
+    labels:
+      - org.opencontainers.image.title=MultiProdTool
+      - org.opencontainers.image.description=Self-hosted personal operating system
+      - org.opencontainers.image.source=https://github.com/KarthikGopi1234/MultiProdTool
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./data:/data
+    environment:
+      - NODE_ENV=production
+      - PORT=8787
+      - MULTIPROD_DATA_DIR=/data
